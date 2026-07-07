@@ -14,7 +14,7 @@ public class DemoApplication {
 
 //		aaron.setId();
 //		aaron.setName();
-		aaron.setAge(20);
+//		aaron.setAge(20);
 		aaron.setEmail("aaron@different.com");
 
 		System.out.println(aaron.getId());

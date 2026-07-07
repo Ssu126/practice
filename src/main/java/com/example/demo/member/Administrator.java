@@ -1,3 +1,4 @@
+/*
 package com.example.demo.member;
 
 import java.time.LocalDate;
@@ -24,3 +25,4 @@ public class Administrator extends Member {
         return role;
     }
 }
+*/

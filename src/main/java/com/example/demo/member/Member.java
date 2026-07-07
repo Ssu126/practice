@@ -6,9 +6,11 @@ public class Member {
     protected int age;
     protected String email;
 
-    public Member(MemberRequestDto dto){
-        this.name = dto.getName();
-        this.email = dto.getEmail();
+    public Member(Integer id, String name, int age, String email){
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.email = email;
     }
 
     public String toString(){

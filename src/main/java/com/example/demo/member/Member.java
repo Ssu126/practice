@@ -5,6 +5,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true, includeFieldNames = false)
+@EqualsAndHashCode
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class Member {
     @ToString.Include(name = "memberId")
@@ -14,6 +15,7 @@ public class Member {
     private int age;
     private String email;
 
+    /*
     public boolean equals(Member member){
         return this.hashCode() == member.hashCode();
     }
@@ -26,4 +28,5 @@ public class Member {
         hash = 31 * hash + (email == null ? 0 : email.hashCode());
         return hash;
     }
+    */
 }

@@ -1,22 +1,26 @@
 package com.example.demo.member;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.experimental.FieldDefaults;
-
 import java.time.LocalDate;
 
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class Administrator extends Member {
-    String role;
-    LocalDate allocatedAt;
+    private String role;
+    private LocalDate allocatedAt;
 
     public Administrator(Integer id, String name, int age, String email, String role){
-        super(id, name, age, email);
+        super();
+        this.name = name;
+        this.email = email;
         this.role = role;
         this.allocatedAt = LocalDate.now();
+    }
+
+    public String toString(){
+        return String.format(
+                "Member(id=%s, name=%s, age=%s, email=%s, role=%s, allocated=%s)",
+                this.id, this.name, this.age, this.email, this.role, this.allocatedAt
+        );
+    }
+    public String getRole(){
+        return role;
     }
 }

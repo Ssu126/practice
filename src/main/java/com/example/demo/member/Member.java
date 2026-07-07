@@ -13,4 +13,11 @@ public class Member {
     private String name;
     private int age;
     private String email;
+
+    public boolean equals(Member member){
+        return this.id.equals(member.id) &&
+                this.name.equals(member.name) &&
+                this.age == member.age &&
+                this.email.equals(member.email);
+    }
 }

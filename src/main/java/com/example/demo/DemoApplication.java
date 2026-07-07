@@ -7,23 +7,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication {
 	public static void main(String[] args) {
-		//Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
-		//Administrator aaron = new Administrator(1, "Aaron", "DEVELOPER");
-
-		Member aaron = new Member();
-
-		aaron.setId(1);
-		aaron.setName("Aaron");
-		aaron.setAge(10);
-		aaron.setEmail("aaron@example.com");
+		Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
+		Member baron = new Member(1, "Aaron", 10, "aaron@example.com");
 
 		System.out.println("---");
 		System.out.println(aaron);
 		System.out.println(aaron.toString());
 
-		System.out.println(aaron.getId());
-		System.out.println(aaron.getName());
-		System.out.println(aaron.getAge());
-		System.out.println(aaron.getEmail());
+		System.out.println("---");
+		System.out.println(baron);
+		System.out.println(baron.toString());
+
+		System.out.println("---");
+		System.out.println(aaron == baron);
+		System.out.println(aaron.equals(baron));
 	}
 }

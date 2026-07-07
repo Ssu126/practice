@@ -2,23 +2,20 @@ package com.example.demo.member;
 
 import lombok.Builder;
 
+@Builder
 public class Member {
     protected Integer id;
-    protected String name;
+    @Builder.Default
+    protected String name = "Unnamed";
     protected int age;
-    protected String email;
-
-    @Builder
-    public Member(String name, String email){
-        this.name = name;
-        this.email = email;
-    }
+    @Builder.Default
+    protected String email = "Undefined";
 
     public String toString(){
         return String.format("Member(id=%s, name=%s, " +
                 "age=%s, email=%s", id, name, age, email);
     }
-    
+
     public String getName(){
         return this.name;
     }

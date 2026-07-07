@@ -10,7 +10,8 @@ public class DemoApplication {
 				.name("Aaron")
 				.email("aaron@example.com")
 				.build();
-		Member baron = new Member("Baron", "baron@example.com");
+		Member baron = Member.builder()
+						.build();
 
 		System.out.println("---");
 		System.out.println(aaron);

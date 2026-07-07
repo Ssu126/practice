@@ -12,6 +12,11 @@ public class DemoApplication {
 		System.out.println(aaron);
 		System.out.println(aaron.toString());
 
+//		aaron.setId();
+//		aaron.setName();
+		aaron.setAge(20);
+		aaron.setEmail("aaron@different.com");
+
 		System.out.println(aaron.getId());
 		System.out.println(aaron.getName());
 		System.out.println(aaron.getAge());

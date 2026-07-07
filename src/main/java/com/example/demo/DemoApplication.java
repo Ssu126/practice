@@ -11,5 +11,10 @@ public class DemoApplication {
 		System.out.println("---");
 		System.out.println(aaron);
 		System.out.println(aaron.toString());
+
+		System.out.println(aaron.getId());
+		System.out.println(aaron.getName());
+		System.out.println(aaron.getAge());
+		System.out.println(aaron.getEmail());
 	}
 }

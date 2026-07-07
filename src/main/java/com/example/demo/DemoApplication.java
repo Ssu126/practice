@@ -6,27 +6,27 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication {
 	public static void main(String[] args) {
-		Member aaron = Member.builder()
-				.id(1)
+		String request = "AARON";
+		Member.MemberBuilder builder = Member.builder()
 				.age(10)
-				.name("Aaron")
-				.email("aaron@example.com")
-				.build();
-		Member baron = Member.builder()
-				.email("baron@example.com")
-				.name("Baron")
-				.age(20)
-				.id(2)
-				.build();
+				.email("common@example.com");
+
+		if(request.equals("AARON")){
+			builder
+					.id(1)
+					.name("Aaron");
+		} else if (request.equals("BARON")) {
+			builder
+					.id(2)
+					.name("Baron");
+		}
+
+		Member aaron = builder.build();
+
 
 		System.out.println("---");
 		System.out.println(aaron);
 		System.out.println(aaron.toString());
 		System.out.println(aaron.getName());
-
-		System.out.println("---");
-		System.out.println(baron);
-		System.out.println(baron.toString());
-		System.out.println(baron.getName());
 	}
 }

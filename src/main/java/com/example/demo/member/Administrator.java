@@ -1,7 +1,9 @@
 package com.example.demo.member;
 
+import lombok.ToString;
 import java.time.LocalDate;
 
+@ToString
 public class Administrator extends Member {
     private String role;
     private LocalDate allocatedAt;
@@ -10,11 +12,5 @@ public class Administrator extends Member {
         super(id, name, age, email);
         this.role = role;
         this.allocatedAt = LocalDate.now();
-    }
-    public String toString() {
-        return String.format(
-                "Administrator(id=%s, name=%s, age=%s, email=%s, role=%s, allocated=%s)",
-                this.getId(), this.getName(), this.getId(), this.getEmail(), this.role, this.allocatedAt
-        );
     }
 }

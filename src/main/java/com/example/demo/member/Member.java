@@ -1,5 +1,8 @@
 package com.example.demo.member;
 
+import lombok.Builder;
+
+@Builder
 public class Member {
     protected Integer id;
     protected String name;

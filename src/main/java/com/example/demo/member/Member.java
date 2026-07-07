@@ -6,7 +6,7 @@ public class Member {
     protected int age;
     protected String email;
 
-    public void setName(String name){
+    public Member(String name){
         this.name = name;
     }
     public void setEmail(String email){

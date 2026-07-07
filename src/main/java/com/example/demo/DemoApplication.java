@@ -7,11 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication {
 	public static void main(String[] args) {
-		Member aaron = new Member();
-		aaron.setName("Aaron");
+		Member aaron = new Member("Aaron");
 		aaron.setEmail("aaron@example.com");
-		Member baron = new Member();
-		baron.setName("Baron");
+		Member baron = new Member("Baron");
 		baron.setEmail("baron@example.com");
 
 		System.out.println("---");

@@ -8,13 +8,13 @@ public class Member {
     protected int age;
     protected String email;
 
-    public Member(Integer id, String name, int age, String email){
+    private Member(Integer id, String name, int age, String email){
         this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
     }
-    
+
     public static Member from(MemberCreateRequestDto requestDto){
         return new Member(
                 null,

@@ -10,13 +10,13 @@ import java.util.List;
 public class DemoApplication {
 	public static void main(String[] args) {
 		MemberCreateRequestDto requestDto = new MemberCreateRequestDto("Baron", "baron@example.com");
-		Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
+//		Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
 		Member baron = Member.from(requestDto);
 
-		System.out.println("---");
-		System.out.println(aaron);
-		System.out.println(aaron.toString());
-		System.out.println(aaron.getName());
+//		System.out.println("---");
+//		System.out.println(aaron);
+//		System.out.println(aaron.toString());
+//		System.out.println(aaron.getName());
 
 		System.out.println("---");
 		System.out.println(baron);

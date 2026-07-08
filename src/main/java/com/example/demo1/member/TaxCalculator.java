@@ -4,5 +4,8 @@ import lombok.Getter;
 
 @Getter
 public class TaxCalculator {
-    public static final double TAX_RATE =
+    public static final double TAX_RATE = 0.11;
+    public static double calculate(int originalPrice){
+        return TAX_RATE * originalPrice;
+    }
 }

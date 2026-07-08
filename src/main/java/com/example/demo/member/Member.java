@@ -7,18 +7,16 @@ import java.util.Objects;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Member {
-    private volatile static Member instance;
+    private static class LazyHolder {
+        private static final Member UNIQUE_INSTANCE = new Member();
+    }
+
     protected Integer id;
     protected String name;
     protected int age;
     protected String email;
 
     public static Member getInstance(){
-        synchronized (Member.class){
-        if (Objects.isNull(instance)) {
-            instance = new Member();
-            }
-        }
-        return instance;
+        return LazyHolder.UNIQUE_INSTANCE;
     }
 }

@@ -8,15 +8,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 	public static void main(String[] args) {
 		Administrator aaron = new Administrator(1, "Aaron", 12, "aaron@example.com", "DEVELOPER");
-		Administrator baron = new Administrator(2, "Baron", 36, "baron@example.com", "DEVELOPER");
+		Administrator baron = new Administrator(1, "Aaron", 12, "aaron@example.com", "DEVELOPER");
 
 		System.out.println("---");
 		System.out.println(aaron);
 		System.out.println(aaron.toString());
+		System.out.println(aaron.getName());
 
 		System.out.println("---");
 		System.out.println(baron);
 		System.out.println(baron.toString());
+		System.out.println(baron.getName());
 
 		System.out.println("---");
 		System.out.println(aaron == baron);

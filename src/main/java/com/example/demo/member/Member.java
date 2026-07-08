@@ -4,6 +4,10 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class Member {
+    Integer id;
+    String name;
+    int age;
+    String email;
 }

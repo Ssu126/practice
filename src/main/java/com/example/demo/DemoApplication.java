@@ -1,28 +1,25 @@
 package com.example.demo;
 
-import com.example.demo.dto.MemberCreateRequestDto;
+import com.example.demo.member.Administrator;
 import com.example.demo.member.Member;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.List;
 
 @SpringBootApplication
 public class DemoApplication {
 	public static void main(String[] args) {
-		Member aaron = Member.getInstance();
-		Member baron = Member.getInstance();
+		Administrator aaron = new Administrator(1, "Aaron", 12, "aaron@example.com", "DEVELOPER");
+		Administrator baron = new Administrator(2, "Baron", 36, "baron@example.com", "DEVELOPER");
 
 		System.out.println("---");
 		System.out.println(aaron);
-//		System.out.println(aaron.toString());
-//		System.out.println(aaron.getName());
+		System.out.println(aaron.toString());
 
 		System.out.println("---");
 		System.out.println(baron);
-//		System.out.println(baron.toString());
-//		System.out.println(baron.getName());
+		System.out.println(baron.toString());
 
 		System.out.println("---");
 		System.out.println(aaron == baron);
+		System.out.println(aaron.equals(baron));
 	}
 }

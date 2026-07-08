@@ -9,18 +9,20 @@ import java.util.List;
 @SpringBootApplication
 public class DemoApplication {
 	public static void main(String[] args) {
-		MemberCreateRequestDto requestDto = new MemberCreateRequestDto("Baron", "baron@example.com");
-//		Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
-		Member baron = Member.from(requestDto);
+		Member aaron = Member.getInstance();
+		Member baron = Member.getInstance();
 
-//		System.out.println("---");
-//		System.out.println(aaron);
+		System.out.println("---");
+		System.out.println(aaron);
 //		System.out.println(aaron.toString());
 //		System.out.println(aaron.getName());
 
 		System.out.println("---");
 		System.out.println(baron);
-		System.out.println(baron.toString());
-		System.out.println(baron.getName());
+//		System.out.println(baron.toString());
+//		System.out.println(baron.getName());
+
+		System.out.println("---");
+		System.out.println(aaron == baron);
 	}
 }

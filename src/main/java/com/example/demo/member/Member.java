@@ -2,9 +2,10 @@ package com.example.demo.member;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
 
-@Data
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
+@Value
+@NonFinal
 public class Member {
     Integer id;
     String name;

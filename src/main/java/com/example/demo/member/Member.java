@@ -7,15 +7,17 @@ import java.util.Objects;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Member {
-    private static Member instance;
+    private volatile static Member instance;
     protected Integer id;
     protected String name;
     protected int age;
     protected String email;
 
-    public synchronized static Member getInstance(){
-        if (Objects.isNull(instance)){
+    public static Member getInstance(){
+        synchronized (Member.class){
+        if (Objects.isNull(instance)) {
             instance = new Member();
+            }
         }
         return instance;
     }

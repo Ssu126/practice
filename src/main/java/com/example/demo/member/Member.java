@@ -3,6 +3,8 @@ package com.example.demo.member;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Member {
     private static Member instance;
@@ -11,8 +13,8 @@ public class Member {
     protected int age;
     protected String email;
 
-    public static Member getInstance(){
-        if (Object.isNull(instance)){
+    public synchronized static Member getInstance(){
+        if (Objects.isNull(instance)){
             instance = new Member();
         }
         return instance;

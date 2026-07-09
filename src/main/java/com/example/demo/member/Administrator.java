@@ -1,4 +1,4 @@
-package com.example.demo.member;
+/*package com.example.demo.member;
 
 import java.time.LocalDate;
 
@@ -15,4 +15,4 @@ public class Administrator extends Member {
                     this.getId(), this.getName(), this.getAge(), this.getEmail(), this.role, this.allocatedAt)
         };
     }
-}
+}*/

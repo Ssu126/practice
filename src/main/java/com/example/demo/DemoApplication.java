@@ -10,6 +10,6 @@ public class DemoApplication {
 
 		System.out.println("---");
 		System.out.println(aaron);
-		System.out.println(aaron.toString);
+		System.out.println(aaron.toString());
 	}
 }

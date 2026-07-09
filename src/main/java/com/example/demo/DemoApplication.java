@@ -1,27 +1,17 @@
 package com.example.demo;
 
-import com.example.demo.member.Administrator;
 import com.example.demo.member.Member;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DemoApplication {
 	public static void main(String[] args) {
-		Administrator aaron = new Administrator(1, "Aaron", 12, "aaron@example.com", "DEVELOPER");
-		Administrator baron = new Administrator(1, "Aaron", 12, "aaron@example.com", "DEVELOPER");
+		Member aaron = new Member(1, "Aaron");
 
 		System.out.println("---");
 		System.out.println(aaron);
-		System.out.println(aaron.toString());
-		System.out.println(aaron.getName());
-
-		System.out.println("---");
-		System.out.println(baron);
-		System.out.println(baron.toString());
-		System.out.println(baron.getName());
-
-		System.out.println("---");
-		System.out.println(aaron == baron);
-		System.out.println(aaron.equals(baron));
+		System.out.println(aaron.toString);
+		aaron.setAge(10);
+		aaron.setEmail("aaron@example.com");
 	}
 }

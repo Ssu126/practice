@@ -1,14 +1,14 @@
 package com.example.demo.member;
 
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.NonFinal;
 
-@Value
-@NonFinal
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@RequiredArgsConstructor
 public class Member {
-    Integer id;
-    String name;
-    int age;
-    String email;
+    private Integer id;
+    private String name;
+    private int age;
+    private String email;
 }

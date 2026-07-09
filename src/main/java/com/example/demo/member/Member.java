@@ -6,7 +6,10 @@ import lombok.Setter;
 
 @Getter
 @AllArgsConstructor
-public final class Member {
+public class Member {
+    public static String MEMBER_TO_STRING_FORMAT =
+    "Member(id=%s, name=%s, age=%s, email=%s)";
+
     private Integer id;
     private String name;
     private int age;
@@ -14,7 +17,7 @@ public final class Member {
 
     public String toString(){
         return String.format(
-                "Member(id=%s, name=%s, age=%s, email=%s)",
+                MEMBER_TO_STRING_FORMAT,
                 this.id, this.name, this.age, this.email);
     }
 }

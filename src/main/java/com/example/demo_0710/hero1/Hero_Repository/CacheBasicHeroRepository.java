@@ -4,6 +4,7 @@ import com.example.demo_0710.hero1.Hero_interface.Hero;
 
 import java.lang.reflect.Array;
 import java.util.Objects;
+import java.util.Arrays;
 
 public abstract class CacheBasicHeroRepository<T extends Hero> implements CrudRepository<T>{
     private T[] heroes = (T[]) Array.newInstance(Hero.class, 0);
@@ -27,7 +28,7 @@ public abstract class CacheBasicHeroRepository<T extends Hero> implements CrudRe
             return null;
         }
         T[] newheroes = Arrays.copyOf(heroes, heroes.length+1);
-        System.arraycopy(this.heroes, 0, newheroes, this.heroes.length);
+        System.arraycopy(this.heroes, 0, newheroes, 0, this.heroes.length);
         newheroes[this.heroes.length] = retrieveFromDatabase;
         this.heroes = newheroes;
         System.out.println("- 캐시에는 없지만 데이터베이스에는 존재하여 캐시에 싱크 후 반환합니다 : " + name);

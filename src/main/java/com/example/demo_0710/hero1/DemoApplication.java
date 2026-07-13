@@ -16,8 +16,9 @@ public final class DemoApplication {
                         new AgilityHero("Drow Ranger"),
                 }
         );
-        crudRepository.create(new AgilityHero("Weaver"));
-        crudRepository.delete("Slark");
+         crudRepository.findByName("Slark");
+         crudRepository.findByName("Slark");
+         crudRepository.findByName("HDoemd");
         Hero selectedHero  = crudRepository.findByName("Slark");
 
         IGameService gameService = new TwoCoinGameService(selectedHero);

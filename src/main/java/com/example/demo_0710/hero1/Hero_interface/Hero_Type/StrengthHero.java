@@ -5,10 +5,17 @@ import com.example.demo_0710.hero1.Hero_interface.Hero;
 
 public class StrengthHero extends BasicHero {
     public StrengthHero(String name){
-        super(name, "Strong");
+        super(name);
+    }
+    @Override
+    public void attack(){
+        System.out.println("Bash Attack");
     }
     @Override
     public void ultimate(){
-        System.out.println("클래스에 작성한 Strong ultimate");
-    };
+        System.out.println("Barserker");
+    }
+    public void additional(){
+        System.out.println("Taunt");
+    }
 }

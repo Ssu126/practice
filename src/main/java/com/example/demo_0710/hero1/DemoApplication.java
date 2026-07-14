@@ -6,6 +6,7 @@ import com.example.demo_0710.hero1.Hero_Repository.CrudRepository;
 import com.example.demo_0710.hero1.Hero_interface.Hero;
 import com.example.demo_0710.hero1.GameService.IGameService;
 import com.example.demo_0710.hero1.GameService.TwoCoinGameService;
+import com.example.demo_0710.hero1.Hero_interface.Hero_Type.StrengthHero;
 import com.example.demo_0710.hero1.Hero_interface.Hero_Type.SuperAgilityHero;
 import com.example.demo_0710.hero1.Hero_Repository.CacheAgilityHeroRepository;
 

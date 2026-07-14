@@ -6,7 +6,7 @@ import com.example.demo.Service.OrderService;
 import com.example.demo.Service.DeliveryService;
 import com.example.demo.Service.PaymentService;
 
-public class DemoApplication {
+public final class DemoApplication {
     OrderController orderController = new OrderController(
             new OrderService(new OrderRepository()),
             new PaymentService(new OrderRepository()),

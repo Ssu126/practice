@@ -20,7 +20,7 @@ public class OrderRepository {
     }
 
     public Order update(Order updated){
-        if(!ORDERS.containsKey(updated.getId()){
+        if(!ORDERS.containsKey(updated.getId())){
             throw new RuntimeException("업데이트하려는 구매 정보가 없습니다");
         }
         ORDERS.replace(updated.getId(), updated);

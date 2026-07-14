@@ -1,4 +1,4 @@
-package com.example.demo;
+/*package com.example.demo;
 
 import com.example.demo1.AgilityHero;
 import com.example.demo1.IntelligenceHero;
@@ -67,4 +67,4 @@ public class DemoApplication {
         System.out.println(string_map);
         System.out.println(integer_map);
     }
-}
+}*/

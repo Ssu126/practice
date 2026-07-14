@@ -7,10 +7,12 @@ import com.example.demo.Service.DeliveryService;
 import com.example.demo.Service.PaymentService;
 
 public final class DemoApplication {
-    OrderController orderController = new OrderController(
-            new OrderService(new OrderRepository()),
-            new PaymentService(new OrderRepository()),
-            new DeliveryService(new OrderRepository())
-    );
-    orderController.process();
+    public void main(String[] args) {
+        OrderController orderController = new OrderController(
+                new OrderService(new OrderRepository()),
+                new PaymentService(new OrderRepository()),
+                new DeliveryService(new OrderRepository())
+        );
+        orderController.process();
+    }
 }

@@ -3,11 +3,13 @@ package com.example.demo_0710.hero1.Hero_Repository;
 import com.example.demo_0710.hero1.Hero_interface.Hero;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Arrays;
 
 public abstract class CacheBasicHeroRepository<T extends Hero> implements CrudRepository<T>{
-    private T[] heroes = (T[]) Array.newInstance(Hero.class, 0);
+    private List<T> heroes = new ArrayList<>();
     private final BasicHeroRepository<T> database;
 
     public CacheBasicHeroRepository(BasicHeroRepository<T> database){
@@ -27,10 +29,7 @@ public abstract class CacheBasicHeroRepository<T extends Hero> implements CrudRe
             System.out.println("- 데이터베이스에 존재하지 않습니다 : " + name);
             return null;
         }
-        T[] newheroes = Arrays.copyOf(heroes, heroes.length+1);
-        System.arraycopy(this.heroes, 0, newheroes, 0, this.heroes.length);
-        newheroes[this.heroes.length] = retrieveFromDatabase;
-        this.heroes = newheroes;
+        this.heroes.add(retrieveFromDatabase);
         System.out.println("- 캐시에는 없지만 데이터베이스에는 존재하여 캐시에 싱크 후 반환합니다 : " + name);
         return retrieveFromDatabase;
     }

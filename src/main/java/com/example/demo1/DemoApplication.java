@@ -27,23 +27,44 @@ public class DemoApplication {
         intelligence.attack();
         intelligence.ultimate();
 
-        Set<String> string_set = new HashSet<>(Arrays.asList("1", "2", "3"));
-        string_set.add("4");
-        string_set.remove("1");
-        string_set.contains("1");
-        string_set.clear();
-        string_set.isEmpty();
-        string_set.size();
+        Map<Integer, String> string_map = new HashMap<>();
+        string_map.put(1, "1");
+        string_map.put(2, "2");
+        string_map.put(3, "3");
 
-        Set<Integer> integer_set = new HashSet<>(Arrays.asList(1, 2, 3));
-        integer_set.add(4);
-        integer_set.remove(3);
-        integer_set.contains(1);
-        //integer_set.clear();
-        integer_set.isEmpty();
-        integer_set.size();
+        string_map.get(3);
+        string_map.put(4, "4");
+        string_map.replace(4, "5");
+        string_map.remove(3);
+        string_map.containsKey(1);
+        string_map.containsValue("1");
+        string_map.entrySet();
 
-        System.out.println(string_set);
-        System.out.println(integer_set);
+        string_map.keySet();
+        string_map.values();
+
+        string_map.clear();
+        string_map.isEmpty();
+        string_map.size();
+
+        Map<Integer, Integer> integer_map = new HashMap<>();
+        integer_map.put(1, 1);
+        integer_map.put(2, 2);
+        integer_map.put(3, 3);
+
+        integer_map.get(3);
+        integer_map.put(4, 4);
+        integer_map.replace(4, 5);
+        integer_map.remove(3);
+        integer_map.containsValue(1);
+        integer_map.entrySet();
+        integer_map.keySet();
+        integer_map.values();
+        integer_map.clear();
+        integer_map.isEmpty();
+        integer_map.size();
+
+        System.out.println(string_map);
+        System.out.println(integer_map);
     }
 }

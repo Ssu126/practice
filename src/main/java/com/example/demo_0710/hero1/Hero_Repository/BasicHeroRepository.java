@@ -5,7 +5,7 @@ import com.example.demo_0710.hero1.Hero_interface.Hero;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class BasicHeroRepository<T extends  Hero> implements CrudRepository<T> {
+public abstract class BasicHeroRepository<T extends  Hero> implements CrudRepository<String, V> {
     private final List<T> heroes;
 
     public BasicHeroRepository(List<T> heroes) {

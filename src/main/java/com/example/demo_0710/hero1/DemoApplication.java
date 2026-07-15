@@ -32,10 +32,9 @@ public class DemoApplication {
     public static void main(String[] args) {
         Game.HISTORY.stream()
                 .flatMap(game -> game.getPlayers().values().stream())
-                .sorted(Comparator.comparing(Player::getName)
-                        .thenComparing((o1, o2) -> o1.getSide().compareTo(o2.getSide()))
-                        .thenComparing((o1, o2) -> o2.getKill() - o1.getKill())
-                )
-                .forEach(player -> System.out.println(player));
+                .filter(player -> player.getName().equals("Aaron"))
+                .map(Player::getPickedHero)
+                .sorted((h1, h2) -> h1.getName().compareTo(h2.getName()))
+                .forEach(hero -> System.out.println(hero));
     }
 }

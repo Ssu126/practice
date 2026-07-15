@@ -30,24 +30,12 @@ import java.util.stream.Stream;
 }*/
 public class DemoApplication {
     public static void main(String[] args) {
-        List<Player> playerList = new ArrayList<>(Game.HISTORY.get(0).getPlayers().values());
-        String accumulatedHeroes =
-                playerList.stream()
-                                .filter(player -> player.getSide().equals(Side.RADIANT))
-                                .filter(player -> player.getKill() >= 5)
-                                .map(Player::getPickedHero)
-                                .sorted(new Comparator<Hero>() {
-                                    @Override
-                                    public int compare(Hero o1, Hero o2) {
-                                        return o1.getName().compareTo(o2.getName());
-                                    }
-                                })
-                                .map(Hero::getName)
-                                //.collect(Collectors.joining(", "));
-                                .reduce(
-                                    "래디언트에서 5킬 이상을 달성한 영웅들은 : ",
-                                    (accumulated, heroName) -> accumulated + ", " + heroName
-                                );
-        System.out.println(accumulatedHeroes);
+        Game.HISTORY.stream()
+                .flatMap(game -> game.getPlayers().values().stream())
+                .sorted(Comparator.comparing(Player::getName)
+                        .thenComparing((o1, o2) -> o1.getSide().compareTo(o2.getSide()))
+                        .thenComparing((o1, o2) -> o2.getKill() - o1.getKill())
+                )
+                .forEach(player -> System.out.println(player));
     }
 }

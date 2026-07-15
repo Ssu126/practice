@@ -1,14 +1,14 @@
-/*package com.example.demo;
+import java.util.HashMap;
+
+package com.example.demo1;
 
 import com.example.demo1.AgilityHero;
-import com.example.demo1.IntelligenceHero;
-import com.example.demo1.StrengthHero;
 import com.example.demo1.Hero;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.demo1.StrengthHero;
+import com.example.demo1.IntelligenceHero;
 
 import java.util.*;
 
-@SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
         Hero strength = new StrengthHero();
@@ -67,4 +67,4 @@ public class DemoApplication {
         System.out.println(string_map);
         System.out.println(integer_map);
     }
-}*/
+}

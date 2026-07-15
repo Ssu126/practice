@@ -30,11 +30,15 @@ import java.util.stream.Stream;
 }*/
 public class DemoApplication {
     public static void main(String[] args) {
-        Game.HISTORY.stream()
+        Map<Hero, Long> aaronsHeroStatistics = Game.HISTORY.stream()
                 .flatMap(game -> game.getPlayers().values().stream())
                 .filter(player -> player.getName().equals("Aaron"))
                 .map(Player::getPickedHero)
                 .sorted((h1, h2) -> h1.getName().compareTo(h2.getName()))
-                .forEach(hero -> System.out.println(hero));
+                .collect(Collectors.groupingBy(
+                        (hero) -> hero,
+                        Collectors.counting()
+                ));
+        System.out.println(aaronsHeroStatistics);
     }
 }

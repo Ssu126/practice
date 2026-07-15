@@ -43,26 +43,11 @@ public class DemoApplication {
                                     }
                                 })
                                 .map(Hero::getName)
-                                .collect(Collectors.joining(", "));
-
-        System.out.println(" -- Stream.forEach -- ");
-        Stream<Player> playerStream = playerList.stream();
-        Stream<String> intermediate = playerList.stream()
-                .peek(player -> System.out.println(" >> 첫번째 중간 연산자가 실행됩니다 << "))
-                .filter(player -> player.getSide().equals(Side.RADIANT))
-                .peek(player -> System.out.println(" >> 두번째 중간 연산자가 실행됩니다 << "))
-                .filter(player -> player.getKill() >= 5)
-                .peek(player -> System.out.println(" >> 세번째 중간 연산자가 실행됩니다 << "))
-                .map(Player::getPickedHero)
-                .map(Hero::getName);
-
-                System.out.println(" -- 중간 연산자들을 적용 완료 / 이제 최종 연산자를 통해 실행 -- ");
-                intermediate
-                        .forEach(new Consumer<String>() {
-                            @Override
-                            public void accept(String heroName) {
-                                System.out.println(heroName);
-                            }
-                        });
+                                //.collect(Collectors.joining(", "));
+                                .reduce(
+                                    "래디언트에서 5킬 이상을 달성한 영웅들은 : ",
+                                    (accumulated, heroName) -> accumulated + ", " + heroName
+                                );
+        System.out.println(accumulatedHeroes);
     }
 }

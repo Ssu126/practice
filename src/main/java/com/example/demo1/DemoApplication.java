@@ -1,3 +1,4 @@
+/*
 import java.util.HashMap;
 
 package com.example.demo1;
@@ -67,4 +68,4 @@ public class DemoApplication {
         System.out.println(string_map);
         System.out.println(integer_map);
     }
-}
+}*/

@@ -58,29 +58,22 @@ public class DemoApplication {
 
         System.out.println(" -- Stream.forEach -- ");
         Stream<Player> playerStream = playerList.stream();
+        Stream<String> intermediate = playerList.stream()
+                .peek(player -> System.out.println(" >> 첫번째 중간 연산자가 실행됩니다 << "))
+                .filter(player -> player.getSide().equals(Side.RADIANT))
+                .peek(player -> System.out.println(" >> 두번째 중간 연산자가 실행됩니다 << "))
+                .filter(player -> player.getKill() >= 5)
+                .peek(player -> System.out.println(" >> 세번째 중간 연산자가 실행됩니다 << "))
+                .map(Player::getPickedHero)
+                .map(Hero::getName);
 
-        Stream<Player> intermediate = playerList.stream()
-                .filter(new Predicate<Player>() {
-                    @Override
-                    public boolean test(Player player) {
-                        System.out.println(" >> 첫 번째 중간 연산자가 실행됩니다 << ");
-                        return player.getSide().equals(Side.RADIANT);
-                    }
-                })
-                .filter(new Predicate<Player>() {
-                    @Override
-                    public boolean test(Player player) {
-                        System.out.println(" >> 두번째 중간 연산자가 실행됩니다 << ");
-                        return player.getKill() >= 5;
-                    }
-                });
-        System.out.println(" -- 중간 연산자들을 적용 완료 / 이제 최종 연산자를 통해 실행 -- ");
-        intermediate
-                .forEach(new Consumer<Player>() {
-                    @Override
-                    public void accept(Player player) {
-                        System.out.println(player);
-                    }
-                });
+                System.out.println(" -- 중간 연산자들을 적용 완료 / 이제 최종 연산자를 통해 실행 -- ");
+                intermediate
+                        .forEach(new Consumer<String>() {
+                            @Override
+                            public void accept(String heroName) {
+                                System.out.println(heroName);
+                            }
+                        });
     }
 }

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /*public final class DemoApplication {
     public static void main(String[] args){
@@ -53,11 +54,19 @@ public class DemoApplication {
     public static void main(String[] args){
         List<Player> playerList = new ArrayList<>(PLAYERS.values());
 
-        System.out.println(" -- Stream.format -- ");
+        System.out.println(" -- Stream.forEach -- ");
+        Stream<Player> playerStream = playerList.stream();
         playerList.stream()
-                .forEach(player) -> {
-            System.out.println(player);
-        };
+        //        .forEach(player) -> {
+        //    System.out.println(player);
+        //};
+                .forEach(new Consumer<Player>()
+                        @Override
+                        public void accept(Player player){
+                            System void accept(Player.toString));
+                            System.out.println(player);
+        }
+                );
         System.out.println(" -- for 향상된 -- ");
         for (Player player : playerList){
             System.out.println(player);

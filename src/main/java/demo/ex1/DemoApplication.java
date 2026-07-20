@@ -11,15 +11,13 @@ import java.util.Map;
 
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class DemoApplication {
-    public static void createMessage(String message){
-        System.out.println("당신에게 메세지를 보냅니다. : " + message);
+    public static void createMessage(MessageType type){
+        System.out.println("당신에게 메세지를 보냅니다. : " + type.getMessage());
     }
 
     public static void main(String[] args) {
-        createMessage("안녕하세요.");
-        createMessage("사랑합니다.");
-        createMessage("감사합니다.");
-        createMessage("안녕히가세요.");
+        createMessage(MessageType.LOVE);
+        createMessage(MessageType.THANKS);
     }
 
     public static void backup() {

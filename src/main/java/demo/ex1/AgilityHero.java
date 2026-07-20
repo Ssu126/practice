@@ -1,6 +1,11 @@
-package demo;
+package demo.ex1;
 
-public class AgilityHero implements Hero {
+import demo.ex1.common.Hero;
+
+public class AgilityHero extends Hero {
+    public AgilityHero(String name){
+        super(name);
+    }
     @Override
     public void attack(){
         System.out.println("Agl1");

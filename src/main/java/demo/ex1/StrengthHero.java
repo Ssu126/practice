@@ -1,6 +1,11 @@
-package demo;
+package demo.ex1;
 
-public class StrengthHero implements Hero{
+import demo.ex1.common.Hero;
+
+public class StrengthHero extends Hero {
+    public StrengthHero(String name){
+        super(name);
+    }
     @Override
     public void attack(){
         System.out.println("Str1");

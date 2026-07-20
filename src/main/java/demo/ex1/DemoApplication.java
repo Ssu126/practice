@@ -3,6 +3,7 @@ package demo.ex1;
 import demo.ex1.common.AgilityHeroRepository;
 import demo.ex1.common.Hero;
 import demo.ex1.common.StrengthHeroRepository;
+
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
@@ -11,14 +12,16 @@ import java.util.Map;
 
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public class DemoApplication {
-    public static void createMessage(MessageType type){
-        System.out.println("당신에게 메세지를 보냅니다. : " + type.getMessage());
-        System.out.println("다음으로부터 전송되었습니다. : " + type.getMedia().getSender());
+    public static void createMessage(String type){
+        MessageType mType = MessageType.findByName(type);
+        System.out.println("당신에게 메세지를 보냅니다. : " + mType.getMessage());
+        System.out.println("다음으로부터 전송되었습니다. : " + mType.getMedia().getSender());
     }
 
     public static void main(String[] args) {
-        createMessage(MessageType.LOVE);
-        createMessage(MessageType.THANKS);
+        createMessage("LOVE");
+        createMessage("THANKS");
+        createMessage("HATES");
     }
 
     public static void backup() {

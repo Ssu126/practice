@@ -1,11 +1,8 @@
-package com.Add_Practice1_1;
-
-import java.util.List;
+package Practice1;
 
 public interface IRepository {
     Member create(Member entity);
     Member read(Integer id);
-    List<Member> read();
-    Member update(Integer id, Member entity);
+    Member update(Member entity);
     void delete(Integer id);
 }

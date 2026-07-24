@@ -1,4 +1,4 @@
-package com.Add_Practice1_1;
+package Practice2;
 
 import java.util.List;
 

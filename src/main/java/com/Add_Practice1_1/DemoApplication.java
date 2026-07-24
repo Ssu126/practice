@@ -1,25 +1,28 @@
 package com.Add_Practice1_1;
 
+import java.util.List;
+
 public class DemoApplication {
     public final static void main(String[] args){
         MemberRepository mRepository = new MemberRepository();
 
         System.out.println("--create--");
-        mRepository.create(new Member(1, "susu1", 10, "susu1@email.com"));
-        mRepository.create(new Member(2, "susu2", 20, "susu2@email.com"));
-        mRepository.create(new Member(3, "susu3", 30, "susu3@email.com"));
+        Member m1 = mRepository.create(new Member("susu1", 10, "susu1@email.com"));
+        Member m2 = mRepository.create(new Member("susu2", 20, "susu2@email.com"));
+        Member m3 = mRepository.create(new Member("susu3", 30, "susu3@email.com"));
 
-        System.out.println("--delete--");
+        System.out.println("\n--read--");
+        System.out.println("전체 조회 목록: " + mRepository.read());
+
+        System.out.println("\n--delete--");
         mRepository.delete(3);
 
-        System.out.println("--update--");
-        mRepository.update(new Member(2, "susu22", 22, "susu22@email.com"));
+        System.out.println("\n--update--");
+        mRepository.update(2, new Member("susu22", 22, "susu22@email.com"));
 
-        System.out.println("--read--");
-        System.out.println(mRepository.read(1).toString());
-        System.out.println(mRepository.read(2).toString());
 
-        System.out.println("--read All--");
-        System.out.println(mRepository.rAll());
+        System.out.println("\n--객체 개별 조회--");
+        System.out.println("1번 회원 조회\n" + mRepository.read(1));
+        System.out.println("2번 회원 조회\n" + mRepository.read(2));
     }
 }

@@ -5,4 +5,5 @@ public interface IRepository {
     Member read(Integer id);
     Member update(Member entity);
     void delete(Integer id);
+    //3
 }

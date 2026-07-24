@@ -34,4 +34,5 @@ public class MemberRepository implements IRepository {
     public void delete(Integer id) {
         database.remove(id);
     }
+    //5
 }
